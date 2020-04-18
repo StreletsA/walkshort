@@ -1,0 +1,27 @@
+<html>
+{% load static %}
+ <head>
+   <link rel="stylesheet" type="text/css" href={% static "style/admin-style.css" %}>
+ </head>
+
+ <body>
+   <center>
+     <table>
+      {% for key, value in data.items %}
+        <tr>
+          <!--<td>{{key}}</td><td>{{value.0}}</td><td><a href={{value.1}}>{{value.1}}</a></td>-->
+          <td>
+            <form action= '{% url "my_view_name"%}' method="POST">
+              {% csrf_token %}
+              <td><input style="width:50px" type="text" name="id_inbase" value="{{key}}"/></td><td>{{value.0}}</td><td><a href={{value.1}}>{{value.1}}</a></td>
+              <td><input type="submit"  value="Удалить" id="del_but" /></td>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+     </table>
+   </center>
+
+ </body>
+
+</html>

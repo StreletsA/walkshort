@@ -1,0 +1,10 @@
+html{
+  background-color: black;
+}
+td{
+  background-color: gray;
+  padding: 10px;
+}
+a:hover{
+  color: white;
+}
